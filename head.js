@@ -68,7 +68,7 @@
     // Extract base domain (main domain after subdomain)
     const domainParts = currentHost.split('.');
     const partsLength = domainParts.length;
-    const part = partsLength > 1 ? -3 : -2;
+    const part = partsLength >= 3 ? -3 : -2;
     // Handle cases like sub.sub.domain.com or domain.co.uk
     // We'll assume last two parts are the main domain (e.g. moneyfree.eu.org or google.com)
     const mainDomain = partsLength >= 3 ? domainParts.slice(part).join('.') : currentHost;
