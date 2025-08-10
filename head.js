@@ -72,13 +72,6 @@ function handleRedirect() {
     var maxTry = 5;
     const try1 = `https://try1.${pci}`
 
-    // Check if current host is exactly mydomain
-    if (host === pci) {
-        // First redirect to try1
-        window.location.href =  try1 ;
-        return;
-    }
-
     // Check if host matches tryN pattern
     var match = host.match(/^try(\d+)\./);
 
