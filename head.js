@@ -2,6 +2,7 @@
   var url = new URL(window.location.href);
   var pci = url.host.replace(/try\d+\./, '');
   var ppi = pci;
+  var host = url.host;
 
   console.log('Domain', pci);
   var trafficbackURL = "https://g0st.com/4/5478606/?var="+ppi+"&ymid="+pci;
@@ -28,12 +29,14 @@
   document.head.appendChild(s);
 </script>
 
+  <!--
 <script>
   var Back_Button_Zone = 5478606;
   var Domain_TB = "rel-s.com";
 </script>
 <script async src="https://desenteir.com/225/2af90/reverse.min.js?sf=1"></script>
-
+-->
+  
 <script>
   function isInApp() {
       const regex = new RegExp(`(WebView|(iPhone|iPod|iPad)(?!.*Safari/)|Android.*(wv))`, 'ig');
@@ -65,34 +68,33 @@
 
 
 <script>
-  function handleRedirect() {
-    const currentHost = window.location.hostname;
-    // Extract base domain (main domain after subdomain)
-    const domainParts = currentHost.split('.');
-    const partsLength = domainParts.length;
-    const part = partsLength >= 3 ? -3 : -2;
-    // Handle cases like sub.sub.domain.com or domain.co.uk
-    // We'll assume last two parts are the main domain (e.g. moneyfree.eu.org or google.com)
-    const mainDomain = partsLength >= 3 ? domainParts.slice(part).join('.') : currentHost;
-    const subPrefix = "try";
-    // Regex to detect try[number].mainDomain
-    const subdomainRegex = new RegExp(`^${subPrefix}(\\d+)\\.${mainDomain.replace('.', '\\.')}$`);
-    const match = currentHost.match(subdomainRegex);
-    if (match) {
-      const currentNumber = parseInt(match[1], 10);
-      const nextNumber = currentNumber + 1;
-      // Optional limit
-      if (nextNumber <= 10) {
-        const nextHost = `${subPrefix}${nextNumber}.${mainDomain}`;
-        window.location.href = `https://${nextHost}${window.location.pathname}${window.location.search}`;
-      } else {
-        console.warn("Max redirect level reached.");
-        window.location.href = trafficbackURL;
-      }
-    } else {
-      // If not in try[number] subdomain, redirect to try1
-      const firstHost = `${subPrefix}1.${mainDomain}`;
-      window.location.href = `https://${firstHost}${window.location.pathname}${window.location.search}`;
+function handleRedirect() {
+    var maxTry = 5;
+    const try1 = `https://try1.${pci}`
+
+    // Check if current host is exactly mydomain
+    if (host === pci) {
+        // First redirect to try1
+        window.location.href =  try1 ;
+        return;
     }
-  }
+
+    // Check if host matches tryN pattern
+    var match = host.match(/^try(\d+)\./);
+    if (match) {
+        var currentTry = parseInt(match[1], 10);
+        if (currentTry < maxTry) {
+            // Increment try number;
+            window.location.href = `https://try${(currentTry + 1)}.${pci}`;
+        } else {
+            // Max reached → go to Google
+            window.location.href = trafficbackURL ;
+        }
+        return;
+    }
+
+    // If host doesn't match any expected pattern → fallback to try1
+    window.location.href = try1
+}
+
 </script>
