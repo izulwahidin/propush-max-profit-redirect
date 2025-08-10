@@ -2,6 +2,8 @@
   var url = new URL(window.location.href);
   var pci = url.host.replace(/try\d+\./, '');
   var ppi = pci;
+
+  console.log('Domain', pci);
   var trafficbackURL = "https://g0st.com/4/5478606/?var="+ppi+"&ymid="+pci;
 </script>
 
